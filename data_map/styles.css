@@ -1,0 +1,214 @@
+body{
+    width:100vw;
+    height:100vh;
+    display:grid;
+    place-items:center;
+    --white: #fff;
+    --yellow: #FFD464;
+    --darkblue: #005693;
+    --navyblue: #170E2B;
+    --blue: #009CAB;
+    --red: #E64626;
+    --tan: #BBC69B;
+    --orange: #F28801;
+    background:var(--darkblue);
+    transition:0.5s ease-in-out;
+    &.loaded{
+      background:var(--tan);
+      #map{
+        svg{
+          path{
+            opacity:1;
+          }
+        }
+      }
+      h1{
+        top:0;
+        color:var(--white);
+        &:last-of-type{
+          top:calc(100% - 12vmin);
+        }
+      }
+      #map{
+        opacity:1;
+        pointer-events:all;
+      }
+    }
+    h1{
+      position:absolute;
+      font-family:'Oswald';
+      font-weight:800;
+      width:100vw;
+      text-align:center;
+      z-index:0;
+      text-transform:uppercase;
+      color:var(--tan);
+      font-size:10vmin;
+      margin:0;
+      line-height:1.15;
+      -webkit-text-stroke:3px var(--navyblue);
+      top:calc(50% - 10vmin);
+      transition:0.7s ease-in-out;
+      &:nth-of-type(2){
+        top:50%;
+      }
+    }
+    #map{
+      width:200vw;
+      max-width:3000px;
+      height:75vmin;
+      transition:0.2s ease-in-out;
+      transition-delay:0.5s;
+      opacity:0;
+      pointer-events:none;
+      cursor:move;
+      z-index:9;
+      overflow:hidden;
+      position:relative;
+      background:radial-gradient(circle at center, var(--navyblue) 1.5px, transparent 1px, transparent 10px), var(--blue);
+      background-size:10px 10px;
+      box-shadow:0 -3px 0 0 var(--navyblue), 0 3px 0 0 var(--navyblue);
+      &:before{
+        content:'API/data via Javier Aviles: github.com/javieraviles/covidAPI';
+        position:absolute;
+        z-index:999;
+        pointer-events:none;
+        font-family:'Oswald';
+        color:var(--navyblue);
+        background:#fff;
+        bottom:0;
+        left:0;
+        padding:10px;
+        font-weight:300;
+        font-size:13px;
+      }
+      svg{
+        width:200vw;
+        max-width:3000px;
+        height:auto;
+        position:absolute;
+        left:0;
+        top:0;
+        cursor:move;
+        left:-50vw;
+        top:-12.5vh;
+        @media (min-width:1500px){
+          margin-top:-20vh;
+        }
+        @media (min-width:2500px){
+          margin-left:750px;
+          top:0vh;
+        }
+        path{
+          fill:var(--yellow);
+          stroke:var(--navyblue);
+          stroke-width:2px;
+          transition:fill 0.3s ease-in-out, opacity 0.1s ease-in-out;
+          z-index:0;
+          position:relative;
+          cursor:move;
+          opacity:0;
+          @for $i from 1 through 250{
+            &:nth-of-type(#{$i}){
+              transition-delay:0s, #{($i/300) + 0.75}s;
+            }
+          }
+          &.active{
+            z-index:5;
+            fill:var(--orange);
+          }
+        }
+      }
+    }
+    #tooltip{
+      width:250px;
+      height:150px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      padding:10px 20px;
+      box-sizing:border-box;
+      position:absolute;
+      background:var(--white);
+      bottom:0;
+      left:0;
+      z-index:999;
+      opacity:1;
+      pointer-events:none;
+      color:var(--navyblue);
+      opacity:0;
+      transition:opacity 0.2s ease-in-out;
+      transition-delay:0.2s;
+      border-radius:3px;
+      box-shadow:0 0 0 3px var(--navyblue);
+      &:after, &:before{
+        content:'';
+        position:absolute;
+        bottom:-10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 10px 0 10px;
+        border-color: #fff transparent transparent transparent;
+      }
+      &:before{
+        border-width: 13px 13px 0 13px;
+        border-color: var(--navyblue) transparent transparent transparent;
+        bottom:-13px;
+      }
+      &.active{
+        opacity:1;
+        transition-delay:0s;
+      }
+      .data{
+        display:none;
+        pointer-events:none;
+        padding:2.25rem 0 0;
+        h3{
+          color:var(--red);
+          margin:0px;
+          width:100%;
+          font-family:"Oswald";
+          font-weight:900;
+          font-size:1.5rem;
+          text-transform:uppercase;
+          color:#fff;
+          position:absolute;
+          top:0;
+          left:0;
+          width:100%;
+          text-align:center;
+          padding:0.5rem 0;
+          background:var(--darkblue);
+          border-radius:3px 3px 0 0;
+        }
+        h4{
+          color:var(--navyblue);
+          margin:0px;
+          width:100%;
+          font-family:"Oswald";
+          font-weight:300;
+          font-size:1.25rem;
+          line-height:1.45;
+          span{
+            font-weight:700;
+            color:var(--orange);
+          }
+          &:nth-of-type(2){
+            span{
+              color:var(--red);
+            }
+          }
+          &:last-of-type{
+            span{
+              color:var(--blue);
+            }
+          }
+        }
+        &.active{
+          display:block;
+        }
+      }
+    }
+  }

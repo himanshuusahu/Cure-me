@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CureZone-19</title>
+    <link rel="stylesheet" href="styles.css">
+  
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+      body {
+        background-color: #f6f6fb;
+        color: #302e38;
+        font-family: "Inter", sans-serif;
+      }
+
+      .wrapper {
+        padding: 0;
+        margin: 0 auto 10rem;
+        max-width: 50rem;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+
+      .container {
+        height: 0rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 2rem;
+        font-size: x-large;
+      }
+
+      
+
+      .nav-bar--buttons {
+        background-color: #fff;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        border-radius: 10rem;
+      }
+
+      .nav-bar--buttons .nav-bar__link {
+        border-radius: 2rem;
+        padding: 0.5rem 1.25rem;
+        background-color: #2ab7ea10;
+        margin: 0 1rem;
+        text-decoration: none;
+        color: #084acb;
+        font-weight: 500;
+        transition: box-shadow 0.3s ease-in;
+      }
+
+      .nav-bar--buttons .nav-bar__link:hover {
+        box-shadow: 0 0 0 2px;
+      }
+
+      .nav-bar--buttons .nav-bar__link.is-active {
+        background-color: #084acb;
+        color: #fff;
+      }
+    </style>
+    <script type="text/javascript">
+      const navLinks = document.querySelectorAll(".nav-bar__link");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const parent = link.parentNode;
+          const activeLink = parent.querySelector(".is-active");
+
+          activeLink.classList.remove("is-active");
+          link.classList.add("is-active");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <section class="wrapper">
+      <div class="container">
+        <nav class="nav-bar nav-bar--buttons">
+          <a class="nav-bar__link is-active" href="/"> Home </a>
+          <a class="nav-bar__link" href="data_map/index.html"> Live Tracker </a>
+          <a class="nav-bar__link" href="shooting-game/index.html"> Corona Shooting Game </a>
+          
+          <a class="nav-bar__link" href="about-us/contact.html"> About Us </a>
+        </nav>
+      </div>
+    </section>
+
+    <!--<h1>How to Protect Yourself</h1>-->
+     
+      <!-- Corona animation container -->
+      <div class="animatediv"> 
+      <img src="https://atheistiran.com/wp-content/uploads/2020/03/corona-virus.png">
+        </div>
+      
+      <!-- Image on top of the Main menu container -->
+      <img src="https://atheistiran.com/wp-content/uploads/2020/03/people-mask.png" class="TopImage">
+      
+      <!-- Main Menu Start -->
+      <ul class="menu shadow">
+        
+            <li>
+          <a href="#CleanYourHand">Clean your hands often</a>
+        </li>
+        
+            <li>
+          <a href="#AvoidCloseContact">Avoid close contact</a>
+        </li>
+            
+            <li>
+          <a href="#StayHome">Follow Social Distancing Rules</a>
+        </li>
+        
+            <li>
+          <a href="#CoverCoughs">Cover coughs and sneezes</a>
+       </li>
+        
+            <li>
+         <a href="#WearAFacemask">Wear a facemask if you are sick</a>
+        </li>
+        
+            <li>
+          <a href="#CleanAndDisinfect">Clean and Disinfect </a>
+        </li>
+
+        <li>
+          <a href="#HaveSymptoms">Do you have symptoms like this?</a>
+         </li>
+
+         <li>
+           <a href="#ContactUs">Don't Worry!! Contact Us!</a>
+         </li>
+        </ul>
+      <!-- Main Menu End -->
+      
+      <!-- Free Space container  -->  
+      <div style="margin-top:40%"></div>
+      
+      <!-- Message Boxes  -->  
+       <h2>Clean Your Hand</h2>
+      <div class="messagebox shadow" id="CleanYourHand">
+        <ul>
+    <li><strong>Wash your hands</strong> often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing.</li>
+          <br>
+    <li>If soap and water are not readily available, <strong>use a hand sanitizer that contains at least 60% alcohol</strong>. Cover all surfaces of your hands and rub them together until they feel dry.</li>
+          <br>
+    <li><strong>Avoid touching</strong> <strong>your eyes, nose, and mouth</strong> with unwashed hands.
+     </li>
+    </ul>
+      </div>
+      </div>
+      
+    <h2>Avoid Close Contact</h2>
+      <div class="messagebox shadow" id="AvoidCloseContact">
+        
+        <ul>
+    <li><strong>Avoid close contact</strong> with people who are sick</li>
+    <li>Put <strong>distance between yourself and other</strong> <strong>people</strong> if COVID-19 is spreading in your community. This is especially important for people who are at higher risk of getting very sick.</li>
+    </ul>
+        </div>
+          
+     
+    
+    <h2>Follow Social Distancing Rules</h2>
+          <div class="messagebox shadow" id="StayHome">
+            
+            <li><strong>Stay home</strong> if you are sick, except to get medical care.</li>
+            <li>Avoid public spaces and social gatherings</li>
+            <li>Stay at least 6 feet away from others if you must go out</li>
+            <li>Wear a homemade cloth or fabric mask in public</li>
+            <li>Don't attend or host gatherings</li>
+            <li>Avoid mass transit</li>
+            <li>Consider using delivery services for groceries, medications and other household items</li>
+      </div>
+       
+    
+    
+    <h2>Cover Coughs</h2>
+     <div class="messagebox shadow" id="CoverCoughs">
+            
+            <ul>
+    <li><strong>Cover your mouth and nose</strong> with a tissue when you cough or sneeze or use the inside of your elbow.</li>
+    <li><strong>Throw used tissues</strong> in the trash.</li>
+    <li>Immediately <strong>wash your hands</strong> with soap and water for at least 20 seconds. If soap and water are not readily available, clean your hands with a hand sanitizer that contains at least 60% alcohol.</li>
+    </ul>
+            
+      </div>
+    
+    
+          <h2>Wear A Facemask</h2>
+          <div class="messagebox shadow" id="WearAFacemask">
+            
+            <ul>
+    <li><strong>If you are sick:</strong> You should wear a facemask when you are around other people (e.g., sharing a room or vehicle) and before you enter a healthcare provider’s office. If you are not able to wear a facemask (for example, because it causes trouble breathing), then you should do your best to cover your coughs and sneezes, and people who are caring for you should wear a facemask if they enter your room.</li>
+              
+              <li><strong>If you are NOT sick: </strong>You do not need to wear a facemask unless you are caring for someone who is sick (and they are not able to wear a facemask). Facemasks may be in short supply and they should be saved for caregivers.</li>
+              
+    </ul>
+      </div>
+          
+    
+     <h2>Clean And Disinfect</h2>
+    
+          <div class="messagebox shadow" id="CleanAndDisinfect">
+            
+            
+            <ul>
+    <li><strong>Clean AND disinfect frequently touched surfaces daily</strong>. This includes tables, doorknobs, light switches, countertops, handles, desks, phones, keyboards, toilets, faucets, and sinks.</li>
+    <li><strong>If surfaces are dirty, clean them:</strong> Use detergent or soap and water prior to disinfection.</li>
+    </ul>
+    </div>
+
+    <h2>Do you have symptoms like this?</h2>
+      <div class="messagebox shadow" id="HaveSymptoms">
+        <p>Common Symptoms includes:-</p>
+        <ul> 
+          <li>Cough</li>
+          <li>Fever</li>
+          <li>Shortness of breath</li>
+          <li>Breathing difficulties</li>
+          
+          <li>Fatigue</li>
+        </ul>
+
+      </div>
+
+      <h2>Don't Worry!! Conatct Us!</h2>
+      <div class="messagebox shadow" id="ContactUs">
+        <p>Dont Worry!! If you have symptoms like this. As per statistics more than 85% people are cured from coronavirus and you are also going to be cured. We are there for you to help. Just fill this form rest we will take care off.</p>
+        <button>Fill this Corona Form</button>
+      </div>
+
+    <div id="WashHandsTxt">Wash Your Hands</div>
+    
+    
+    
+    <!-- Table Container --> 
+    <div id="TblCon">
+      
+      <h3>More Information?</h3>
+      
+    <!-- Table Start --> 
+    <table class="Tbl">
+      <tr>
+        <th>WHO</th>
+        
+        <th>NATIONAL HEALTH PORTAL OF INDIA</th>
+        <th>CORONAVIRUS OUTBREAK</th> 
+      </tr>
+      <tr>
+        <td>
+          <a href="https://www.who.int">
+          <img src="https://devpolicy.org/wp-content/uploads/2015/02/image13.png" alt="world health organization" style="width:100px">
+          </a>
+            </td>
+        
+        <td>
+          <a href="https://www.nhp.gov.in/whatsnew">
+          <img src="data:image/jpeg;base64,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" style="width:100px">
+          </a>
+          </td>
+
+
+          <td>
+            <a href="https://www.worldometers.info/coronavirus/">
+            <img src="https://www.worldometers.info/img/worldometers-logo.gif">
+            </a>
+            </td>  
+      </tr>
+    </table>
+      
+      <!-- Table End --> 
+      
+    </div>
+
+  </body>
+</html>

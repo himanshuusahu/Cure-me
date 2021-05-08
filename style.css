@@ -1,0 +1,394 @@
+*{
+    font-family: 'poppins', sans-serif;
+    letter-spacing: 2px;
+}
+
+.fto{
+    border: 2px solid white;
+
+}
+.ft{
+    font-size: 30px;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: #fafafa;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	transition: background 0.2s linear;
+}
+
+body.dark {
+	background: #080808;
+	/*background: #292C35;*/
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 26px;
+	width: 50px;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+
+/*.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}*/
+
+
+.heading{
+    color:whitesmoke;
+}
+.honey{
+    border-radius:10%;
+}
+.mani:hover{
+    transform: rotate(360deg);
+    transition: 0.5s ease;
+    padding: 10px;
+    background-image: url("./img/arrow.png");
+}
+.mani{
+    border: 4px solid black;
+    border-radius: 30px;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /*color: #222;*/
+    scroll-behavior: smooth;
+}
+a {
+
+    text-decoration: none !important;
+}
+
+.navbar {
+    padding: 12px;
+}
+.navbar-nav li {
+    padding-right: 20px;
+}
+.nav-link {
+    font-size: 24px !important;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel {
+    margin-top: 80px;
+}
+.jumbotron {
+    padding: 16px;
+    border-radius: 0;
+}
+.padding {
+    padding-bottom: 32px;
+}
+.welcome {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 32px;
+}
+
+.welcome hr {
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+    margin-top: 5px;
+    margin-bottom: 16px;
+}
+.fa-code {
+    color: #e54d26;
+}
+.fa-bold {
+    color: #563d7c;
+}
+.fa-css3 {
+    color: #2163af;
+}
+
+.social a {
+    font-size: 72px;
+    padding: 48px;
+}
+
+.vanbar{
+    background-color: #000;
+}
+.fa-linkedin:hover,.fa-github:hover,.fa-envelope:hover {
+    color: #d5d5d5;
+}
+#registrationForm {
+    border: 1px solid #ddd;
+    margin: 40px 0;
+}
+#registrationForm .col-md-4 {
+    padding: 40px 20px;
+}
+#registrationForm .form-control {
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    font-size: 18px;
+}
+footer {
+    background-color: black;
+    color: #d5d5d5;
+    padding-top: 32px;
+}
+hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+    margin-top: 13px;
+    margin-bottom: 16px;
+}
+footer a {
+    color: #d5d5d5;
+}
+hr.light-100 {
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+    margin-top: 13px;
+    margin-bottom: 16px;
+}
+time {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    background: #ababab;
+    color: #ffffff;
+    padding: 2.5px 5px;
+    border-radius: 5px;
+}
+#registrationForm {
+    border: 1px solid #ddd;
+    margin: 40px 0;
+    border: 2px solid black;
+    border-radius: 1%;
+    box-shadow: 5px 10px 10px 10px #ddd;
+}
+#registrationForm .col-md-6 {
+    padding: 40px 20px;
+}
+#registratioForm label {
+    font-size: 16px;
+}
+.form-control{
+    font-weight: bolder;
+}
+#registrationForm .form-control {
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    font-size: 18px;
+}
+/*-- Media Queries --*/
+@media (max-width: 1024px) {
+    .mani{
+        width: 40%;
+    }
+    .carousel-caption {
+        top: 50%;
+    }
+    .carousel-caption h1 {
+        font-size: 350%;
+    }
+    .carousel-caption h2 {
+        font-size: 350%;
+    }
+    .carousel-caption h3 {
+        font-size: 140%;
+        font-weight: 400;
+        padding-bottom: 3px;
+    }
+
+    .carousel-caption .btn {
+        font-size: 95%;
+        padding: 8px 14px;
+    }
+    .display-4 {
+        font-size: 200%;
+    }
+   
+    .social a {
+        font-size: 64px;
+        padding: 32px;
+    }
+}
+@media (max-width: 768px) {
+    .mani{
+        width: 40%;
+    }
+    .social a {
+        font-size: 50px;
+        padding: 19px;
+    }
+    .carousel-indicators {
+        display: none;
+    }
+    .carousel-caption h1 {
+        font-size: 250%;
+    }
+
+    .carousel-caption h2 {
+        font-size: 250%;
+    }
+
+    .carousel-caption h3 {
+        font-size: 120%;
+        font-weight: 300;
+        padding-bottom: 3px;
+    }
+}
+@media (max-width: 576px) {
+    .mani{
+        width: 40%;
+    }
+    .carousel-caption {
+        top: 40%;
+    }
+    .carousel-caption h1 {
+        font-size: 150%;
+    }
+    .carousel-caption h2 {
+        font-size: 150%;
+    }
+
+    .carousel-caption h3 {
+        font-size: 90%;
+    }
+
+    .carousel-caption .btn {
+        font-size: 80%;
+        padding: 4px 8px;
+    }
+
+    .display-4 {
+        font-size: 160%;
+    }
+    .social a {
+        font-size: 40px;
+        padding: 11.2px;
+    }
+    .card-title {
+        color: black;
+    }
+    .card-text {
+        font-size: 14px;
+    }
+    .welcome {
+        width: 100%;
+    }
+}
+@media (max-width: 400px) {
+    .mani{
+        width: 40%;
+    }
+    .carousel-caption h1 {
+        font-size: 110%;
+    }
+    .carousel-caption h2 {
+        font-size: 110%;
+    }
+
+    .carousel-caption h3 {
+        font-size: 70%;
+    }
+
+    .carousel-caption .btn {
+        font-size: 60%;
+        padding: 4px 8px;
+    }
+}
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 8px;
+}
+.dark{
+    /*background-color: rgba(0, 0, 0);*/
+    color: rgb(255, 208, 0);
+    
+}
+.imgbyme{
+    padding: 3%;
+    width: 100%;
+    box-shadow: 5px 10px 10px 10px #ddd;
+    border-radius: 2%;
+    border:  5px solid black;
+}
+.headkill{
+    background-image: url("./img/left.jpg");
+    margin-top: 12vh;
+    border-radius: 1%;
+    height: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    border: 5px solid black;
+}
+.hk{
+    background-image: url("./img/dark.jpg");
+    margin-top: 12vh;
+    border-radius: 1%;
+    height: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    border: 5px solid black;
+}
+.dmi{
+    border: 3px solid black;
+    border-radius: 50%;
+}
+.nA{
+    background-color: #000;
+    color: #fbff04;
+}
+

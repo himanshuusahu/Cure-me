@@ -1,0 +1,309 @@
+html{
+    font-size:2.9vmin;
+  }
+  
+  body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(to bottom, #19b6ff 50%, #222 50%, #222 calc(50% + 0.25rem), #ccc calc(50% + 0.25rem));
+    perspective:3rem;
+    *{
+      box-sizing:border-box;
+    }
+    #sidewalk{
+      position:absolute;
+      width:400vw;
+      height:100vh;
+      top:calc(50% + 0.25rem);
+      background:repeating-linear-gradient(to right, #222, #222 0.15rem, transparent 0.15rem, transparent 10rem);
+      z-index:0;
+      left:-100%;
+      transform-style:preserve-3d;
+      transform:translateX(0) rotateX(10deg);
+      transform-origin:top;
+      animation:sidewalk 0.5s linear infinite;
+      @keyframes sidewalk{
+        to{
+          transform:translateX(10rem) rotateX(10deg);
+        }
+      }
+      &:before{
+        content:'';
+        position:absolute;
+        width:100%;
+        height:10%;
+        top:calc(-10% - 0.25rem);
+        left:0;
+        transform:rotateX(-10deg);
+        transform-style:preserve-3d;
+        background:linear-gradient(to bottom, #222, #222 0.15rem, #60d54a 0.15rem);
+      }
+    }
+    .wrap{
+      width:10rem;
+      height:10rem;
+      z-index:2;
+      position:absolute;
+      &:nth-of-type(2){
+        top:calc(50% + 10rem);
+        transform:scaleY(-1) skewX(-40deg) translateX(5rem);
+        filter:brightness(0) blur(3px);
+        opacity:0.05;
+        .roll{
+          animation:charge3 2s ease-in-out infinite alternate, charge4 1s ease-in-out infinite alternate;
+        
+        @keyframes charge3{
+          to{
+            transform:translateX(-3rem) scale(0.9) skewX(5deg) scaleY(1.2);
+          }
+        }
+        @keyframes charge4{
+          to{
+            left:calc(50% - 10rem);
+            top:calc(50% - 6.5rem);
+          }
+        }
+        }
+      }
+      .roll{
+        width:7rem;
+        height:7rem;
+        top:calc(50% - 3.5rem);
+        position:absolute;
+        left:calc(50% - 5rem);
+        animation:charge 2s ease-in-out infinite alternate, charge2 1s ease-in-out infinite alternate;
+        
+        @keyframes charge{
+          to{
+            transform:translateX(-3rem) scale(0.9) skewX(5deg);
+          }
+        }
+        @keyframes charge2{
+          to{
+            left:calc(50% - 10rem);
+            top:calc(50% - 0.5rem);
+          }
+        }
+        .body{
+          position:absolute;
+          width:100%;
+          height:100%;
+          left:0;
+          top:0;
+          box-shadow:-0.25rem 0 0 0 #222, 0.25rem 0 0 #fff;
+          background:#fff;
+          animation:bounce 0.125s ease-in-out infinite alternate;
+          @keyframes bounce{
+            from{
+              transform:rotate(-2.5deg) translateY(0rem);
+            }
+            to{
+              transform:rotate(2.5deg) translateY(0.25rem);
+            }
+          }
+          &:before, &:after{
+            content:'';
+            height:4rem;
+            width:7rem;
+            border-radius:350rem / 200rem;
+            position:absolute;
+            box-shadow:0 0 0 0.25rem #222;
+            left:0;
+            top:-2rem;
+          }
+          &:before{
+            background:radial-gradient(ellipse at center, #222 1rem, #fff 1rem);
+          }
+          &:after{
+            border:0.25rem solid #222;
+            border-color:transparent #222 #222 #222;
+            box-shadow:none;
+            left:-0.25rem;
+            bottom:-2rem;
+            top:auto;
+            background:#fff;
+            z-index:9;
+            mask:linear-gradient(to bottom, transparent 50%, #000 50%);
+          }
+        }
+        .leg{
+          position:absolute;
+          width:0.5rem;
+          height:0.5rem;
+          bottom:-1.5rem;
+          border-radius:100%;
+          left:1.5rem;
+          z-index:-1;
+          transform:scaleX(-1) rotate(0deg);
+          animation:run2 0.25s linear infinite alternate;
+          &:last-of-type{
+            animation-delay:-0.125s;
+            left:4rem;
+            bottom:-2.25rem;
+            .inner{
+              animation-delay:-0.125s;
+              .segment{
+                &:last-of-type{
+                  &:before{
+                    transform:rotate(-10deg);
+                  }
+                }
+                @for $i from 1 through 30{
+              &:nth-of-type(#{$i}){
+                animation-delay:#{($i/-360) - 0.125}s;
+              }
+            }
+              }
+            }
+          }
+          @keyframes run2{
+            to{
+              transform:scaleX(-1) rotate(60deg);
+            }
+          }
+          .inner{
+            position:absolute;
+            width:100%;
+            height:100%;
+            left:0;
+            top:0;
+            animation:run3 0.25s linear infinite alternate;
+            transform-origin:top;
+            transform:rotate(-40deg);
+            @keyframes run3{
+              to{
+                transform:translateX(-0.5rem) translateY(-0.5rem) rotate(50deg);
+              }
+            }
+          }
+          .segment{
+            position:absolute;
+            width:100%;
+            height:100%;
+            border-radius:100%;
+            left:0;
+            background:#222;
+            &:last-of-type{
+              &:before{
+                content:'';
+                position:absolute;
+                width:250%;
+                height:100%;
+                border-radius:800rem;
+                left:0;
+                bottom:0;
+                background:#222;
+                transform-origin:left;
+              }
+            }
+            @for $i from 1 through 30{
+              &:nth-of-type(#{$i}){
+                transform-origin:#{$i/12}rem #{$i * -0.25}rem;
+              }
+            }
+            @for $i from 1 through 30{
+              &:nth-of-type(#{$i}){
+                top:#{($i - 1) * 0.05}rem;
+                animation-delay:#{$i/-360}s;
+              }
+            }
+            animation:run 0.25s linear infinite alternate;
+            @keyframes run{
+              to{
+                transform:rotate(-20deg);
+              }
+            }
+          }
+          
+        }
+        .paper{
+          position:absolute;
+          height:7.25rem;
+          width:18rem;
+          left:calc(100% + 0.125rem);
+          top:0rem;
+          overflow:hidden;
+          background:linear-gradient(to left, #222 0.3rem, transparent 0.3rem) 100% calc(50% - 0.15rem) / 100% 6.6rem no-repeat, repeating-linear-gradient(to bottom, transparent, transparent 0.75rem, #fff 0.75rem, #fff 1rem, transparent 1rem), repeating-linear-gradient(to right, #222, #222 0.25rem, transparent 0.25rem, transparent 6rem) 50% 50% / 100% 5rem repeat-x, linear-gradient(to bottom, transparent 5%, #fff 5%, #fff 95%, transparent 95%) 50% 50% / 100% no-repeat;
+          background-position:100%, calc(50% - 0.1rem), 50% 50%, 0rem 50%, 50% 50%;
+          animation:sheets 3s linear infinite, bounce2 0.125s ease-in-out infinite alternate;
+          @keyframes bounce2{
+            from{
+              transform:rotate(2.5deg) translateY(0.25rem);
+            }
+            to{
+              transform:rotate(-2.5deg) translateY(-0.25rem);
+            }
+          }
+          @keyframes sheets{
+            to{
+              background-position:100% calc(50% - 0.1rem), 50% 50%, 42rem 50%, 50% 50%;
+            }
+          }
+          &:before, &:after{
+            content:'____________________________________';
+            color:transparent;
+            text-decoration:underline;
+            text-decoration-style:wavy;
+            text-decoration-color:#222;
+            font-size:2rem;
+            line-height:2;
+            transform:scaleX(3) translateY(0);
+            display:inline-block;
+            font-weight:100;
+            top:-2.8rem;
+            position:absolute;
+            right:0;
+            animation:flap 1s linear infinite;
+            @keyframes flap{
+              to{
+                transform:scaleX(3) translateX(4.5rem);
+              }
+            }
+          }
+          &:after{
+            top:auto;
+            bottom:-0.5rem;
+          }
+        }
+        .face{
+          width:0.75rem;
+          height:0.75rem;
+          border-radius:500rem;
+          position:absolute;
+          z-index:10;
+          top:5rem;
+          left:0.5rem;
+          .eye{
+            position:absolute;
+            width:100%;
+            height:100%;
+            border-radius:100%;
+            background:#222;
+            left:0;
+            top:0;
+            &:before{
+              content:'';
+              position:absolute;
+              width:100%;
+              height:100%;
+              background:inherit;
+              border-radius:100%;
+              left:2.5rem;
+            }
+          }
+          .mouth{
+            position:absolute;
+            width:1.25rem;
+            height:0.75rem;
+            background:#222;
+            border-radius:0.25rem 0.25rem 20rem 20rem;
+            top:1.5rem;
+            left:1rem;
+          }
+        }
+      }
+    }
+  }
