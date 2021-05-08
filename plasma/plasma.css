@@ -1,0 +1,62 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+.bg{
+    background-image: url("corona3.jpg");
+     /* Full height */
+  height: 100%; 
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-text {
+    font-size: 50px;
+    text-align: center;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+
+
+  
+  .text-block{
+    position: absolute;
+    top: 15%;
+    right: 12%;
+    left: 12%;
+    background-color: #222831;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+  }
+
+  /* button*/
+
+  .btn{
+    
+    margin-left: 42%;
+    margin-bottom: 7px;
+  }
+
+
+
+  /* google fonts*/
+
+  
+  h1{
+    font-family: 'Itim', cursive;
+  }
+
+  
+  h4{
+    font-family: 'Itim', cursive;
+  }
