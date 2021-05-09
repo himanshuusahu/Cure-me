@@ -2,6 +2,9 @@
 
 Link - https://cure-me.netlify.app/
 
+YouTube link - https://youtu.be/YQzL_12wEMA
+
+
 Brief Description - 
 
 •	Awareness related to Covid-19 by suggesting the do’s and sop’s suggested by WHO.
@@ -28,6 +31,11 @@ Tech Stack -
 •	JAVASCRIPT/JQUERY
 
 By using all these we are going to make a wonderful website, which can try to solve problems related to Covid-19 in this current pandemic situation and eradicate Covid-19.
+
+How to Use This project - 
+
+ https://cure-me.netlify.app/ by directing to this website directly
+And for code purpose clone it and run index.html from root directory. 
 
 Social problem working on - 
 
